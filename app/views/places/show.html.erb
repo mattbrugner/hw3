@@ -1,14 +1,14 @@
-<h1><%= @place.name%> </h1>
+<h1><%= @place.name%></h1>
 
 <h2>Posts</h2>
 <ul>
 <% for post in @place.posts %>
-<li> <%= post.title %>, <%= post.posted_on%>, <%= post.description%></li>
+<li> <%= "#{post.title}, #{post.posted_on}, #{post.description}"%></li>
 <% end %>
 </ul>
 
 <p>
-<a href="/posts/new?place_id=<%= @place.id%>">New post </a>
+<a href="/posts/new?place_id=<%= @place.id %>">New post </a>
 </p>
 
 <p>
