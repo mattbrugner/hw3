@@ -3,6 +3,10 @@ class PlacesController < ApplicationController
     def index
         @places = Place.all
     end
+    
+    def show
+        @place = Place.find(params["id"])
+    end
 
     def new
         @place = Place.new
@@ -13,5 +17,21 @@ class PlacesController < ApplicationController
         @place.save
         redirect_to "/places"
     end
+
+    def edit
+        @place = Place.find(params["id"])
+      end
+    
+      def update
+        @place = Place.find(params["id"])
+        @place.update(params["place"])
+        redirect_to "/places"
+      end
+    
+      def destroy
+        @place = Place.find(params["id"])
+        @place.destroy
+        redirect_to "/Places"
+      end
 
 end
